@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 04</title>
+    <style>
+        body {
+            background-color: #2b2b2b; /* Preto */
+            color: #9b59b6; /* Roxo */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #9b59b6; /* Roxo */
+        }
+        p {
+            color: #9b59b6; /* Roxo */
+        }
+        input[type="number"],
+        button {
+            background-color: #9b59b6; /* Roxo */
+            color: #ffffff; /* Preto */
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        input::placeholder {
+            color: #ffffff; /* Branco */
+        }
+        #totalExpense {
+            color: #ffffff; /* Preto */
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício 04</h1>
+    <p>Quilometragem que foi percorrida (km):</p>
+    <input type="number" id="kilometers" placeholder="Quilometragem">
+    <p>Valor do combustível pelo litro (R$/litro):</p>
+    <input type="number" id="fuelPrice" placeholder="Preço do Combustível">
+    <button onclick="calculateExpense()">Clique para calcular o gasto</button>
+    <p>Gasto Total (R$):</p>
+    <div id="totalExpense"></div>
+    
+    <script>
+        function calculateExpense() {
+            var kilometers = parseFloat(document.getElementById("kilometers").value);
+            var fuelPrice = parseFloat(document.getElementById("fuelPrice").value);
+            var mileage = 8; // Veículo percorre 8 km por litro
+            
+            var totalExpense = (kilometers / mileage) * fuelPrice;
+            
+            document.getElementById("totalExpense").innerText = "R$ " + totalExpense.toFixed(2);
+        }
+    </script>
+
+<button>
+    <a href="bootstrap.html">Voltar para Home</a>
+</button>
+
+</body>
+</html>

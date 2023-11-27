@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 01</title>
+    <style>
+        body {
+            background-color: #2b2b2b; /* Preto */
+            color: #9b59b6; /* Roxo */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #9b59b6; /* Roxo */
+        }
+        p {
+            color: #9b59b6; /* Roxo */
+        }
+        input[type="number"],
+        button {
+            background-color: #9b59b6; /* Roxo */
+            color: #ffffff; /* Preto */
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        #output,
+        #sum {
+            color: #ffffff; /* Preto */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exercício 01</h1>
+    <p>Digite um valor:</p>
+    <input type="number" id="inputNumber">
+    <button onclick="displayEvenNumbers()">Mostrar números Pares</button>
+    <p>Números pares:</p>
+    <div id="output"></div>
+    <p>Soma final:</p>
+    <div id="sum"></div>
+ 
+    <script>
+        function displayEvenNumbers() {
+            var inputValue = parseInt(document.getElementById("inputNumber").value);
+            var evenNumbers = [];
+            var sum = 0;
+ 
+            for (var i = 2; i <= inputValue; i += 2) {
+                evenNumbers.push(i);
+                sum += i;
+            }
+ 
+            document.getElementById("output").innerText = evenNumbers.join(", ");
+            document.getElementById("sum").innerText = sum;
+        }
+    </script>
+    <button>
+    <a href="bootstrap.html">Voltar para Home</a>
+</button>
+</body>
+</html>

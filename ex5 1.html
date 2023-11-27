@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 05</title>
+    <style>
+        body {
+            background-color: #2b2b2b; /* Preto */
+            color: #9b59b6; /* Roxo */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #9b59b6; /* Roxo */
+        }
+        p {
+            color: #9b59b6; /* Roxo */
+        }
+        input[type="number"],
+        button {
+            background-color: #9b59b6; /* Roxo */
+            color: #ffffff; /* Preto */
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        input::placeholder {
+            color: #ffffff; /* Branco */
+        }
+        #totalCost {
+            color: #ffffff; /* Preto */
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício 05</h1>
+    <p>O Comprimento do cômodo (m):</p>
+    <input type="number" id="length" placeholder="Comprimento">
+    <p>A Largura do cômodo (m):</p>
+    <input type="number" id="width" placeholder="Largura">
+    <button onclick="calculateCost()">Calcular Custo</button>
+    <p>O Custo Total (R$):</p>
+    <div id="totalCost"></div>
+    
+    <script>
+        function calculateCost() {
+            var length = parseFloat(document.getElementById("length").value);
+            var width = parseFloat(document.getElementById("width").value);
+            var pricePerSquareMeter = 36.00;
+            
+            var totalCost = length * width * pricePerSquareMeter;
+            
+            document.getElementById("totalCost").innerText = "R$ " + totalCost.toFixed(2);
+        }
+    </script>
+
+<button>
+    <a href="bootstrap.html">Voltar para Home</a>
+</button>
+
+</body>
+</html>

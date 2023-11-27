@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+    <style>
+        body {
+            background-color: #2b2b2b; /* Preto */
+            color: #9b59b6; /* Roxo */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #9b59b6; /* Roxo */
+        }
+
+        p {
+            color: #9b59b6; /* Roxo */
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        button {
+            background-color: #9b59b6; /* Roxo */
+            color: #ffffff; /* Preto */
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        input::placeholder,
+        button::placeholder {
+            color: #ffffff; /* Branco */
+        }
+
+        button:hover {
+            background-color: #8e44ad; /* Tom mais escuro de roxo */
+        }
+
+        #total {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #9b59b6; /* Roxo */
+        }
+    </style>
+</head>
+<body>
+   
+    <h1>Exercício 03</h1>
+    <p>Produto 1:</p>
+    <input type="text" id="product1Name" placeholder="Nome do Produto">
+    <input type="number" id="product1Value" placeholder="Valor">
+    <input type="number" id="product1Quantity" placeholder="Quantidade">
+    
+    <p>Produto 2:</p>
+    <input type="text" id="product2Name" placeholder="Nome do Produto">
+    <input type="number" id="product2Value" placeholder="Valor">
+    <input type="number" id="product2Quantity" placeholder="Quantidade">
+    
+    <p>Produto 3:</p>
+    <input type="text" id="product3Name" placeholder="Nome do Produto">
+    <input type="number" id="product3Value" placeholder="Valor">
+    <input type="number" id="product3Quantity" placeholder="Quantidade">
+    
+    <button onclick="calculateTotal()">Calcular Total</button>
+    <p>Valor Total da Venda:</p>
+    <div id="total"></div>
+    
+    <script>
+        function calculateTotal() {
+            var product1Value = parseFloat(document.getElementById("product1Value").value);
+            var product1Quantity = parseInt(document.getElementById("product1Quantity").value);
+            var product2Value = parseFloat(document.getElementById("product2Value").value);
+            var product2Quantity = parseInt(document.getElementById("product2Quantity").value);
+            var product3Value = parseFloat(document.getElementById("product3Value").value);
+            var product3Quantity = parseInt(document.getElementById("product3Quantity").value);
+            
+            var total = (product1Value * product1Quantity) + (product2Value * product2Quantity) + (product3Value * product3Quantity);
+            
+            document.getElementById("total").innerText = "R$ " + total.toFixed(2);
+        }
+    </script>
+
+<button>
+    <a href="bootstrap.html">Voltar para Home</a>
+</button>
+
+</body>
+</html>
